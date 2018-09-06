@@ -1,9 +1,16 @@
 dependencies {
-    compile (name:'Inspection-release', ext: 'aar')
-    compile (name:'Blocks-release', ext: 'aar')
-    compile (name:'RobotCore-release', ext: 'aar')
-    compile (name:'Hardware-release', ext: 'aar')
-    compile (name:'FtcCommon-release', ext: 'aar')
-    compile (name:'Analytics-release', ext:'aar')
-    compile (name:'WirelessP2p-release', ext:'aar')
+//    api fileTree(dir: 'libs', include: ['*.aar'])
+//    implementation files('libs/Blocks-release.aar',
+//			'libs/RobotCore-release.aar',
+//			'libs/Hardwware-release.aar',
+//			'libs/FtcCommon-release.aar',
+//			'libs/Analytics-release.aar',
+//			'libs/WirelessP2p-release.aar')
+    implementation (name:'Inspection-release', ext: 'aar')
+    implementation (name:'Blocks-release', ext: 'aar')
+    implementation (name:'RobotCore-release', ext: 'aar')
+    implementation (name:'Hardware-release', ext: 'aar')
+    implementation (name:'FtcCommon-release', ext: 'aar')
+    implementation (name:'Analytics-release', ext:'aar')
+    implementation (name:'WirelessP2p-release', ext:'aar')
 }
