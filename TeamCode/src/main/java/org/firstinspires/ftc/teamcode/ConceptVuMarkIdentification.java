@@ -29,7 +29,6 @@
 package org.firstinspires.ftc.teamcode;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -108,6 +107,7 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
     private void initOpenCv()
     {
+        RobotLog.dd(TAG, "Initializing OpenCV");
         BaseLoaderCallback mLoaderCallback =
                 new BaseLoaderCallback(hardwareMap.appContext)
         {
@@ -120,18 +120,21 @@ public class ConceptVuMarkIdentification extends LinearOpMode {
 
         if(!OpenCVLoader.initDebug())
         {
+            RobotLog.dd(TAG, "Trying opencv manager");
             OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_4_0,
                     hardwareMap.appContext,
                     mLoaderCallback);
         }
         else
         {
+            RobotLog.dd(TAG, "OpenCV loclib connected");
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
     }
 
     private void initVuforia()
     {
+        RobotLog.dd(TAG, "Initializing Vuforia");
         /*
          * To start up Vuforia, tell it the view that we wish to use for camera monitor (on the RC phone);
          * If no camera monitor is desired, use the parameterless constructor instead (commented out below).
